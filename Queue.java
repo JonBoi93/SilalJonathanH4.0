@@ -37,5 +37,46 @@ public class Queue{
    System.out.println("  " + seek.getData());
    seek = seek.getNext();
   }
- 
+ }
 
+public String peek()
+ {
+  if (head == null)
+  return null;
+  return head.getData();
+ }
+ public void enqueue(String item)
+ {
+  Node newNode = new Node(item);
+  if (head == null)
+  {
+  head = newNode;
+  tail = newNode;
+  nodeCount++;
+  }
+  else
+  {
+   tail.setNext(newNode);
+   tail = newNode;
+   nodeCount++;
+  }
+ }
+  public String dequeue()
+  {
+   if (head == null)
+   {
+    return null;
+   }
+   else
+   {
+    String present = head.getData();
+    head = head.getNext();
+    if (head == null)
+     tail = null;
+    nodeCount--;
+    return present;
+
+   }
+  }
+
+}
