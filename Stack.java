@@ -37,4 +37,43 @@ public class Stack{
    seek = seek.getNext();
   }
  }
+ 
+public String peek()
+ {
+  if (head == null)
+  return null;
+  return head.getData();
+ }
+ public void push(String item)
+ {
+  Node newNode = new Node(item);
+  if (head == null)
+  {
+  head = newNode;
+  nodeCount++;
+  }
+  else
+  {
+   newNode.setNext(head);
+   head = newNode;
+   nodeCount++;
+  }
+ }
+  public String pop()
+  {
+   if (head == null)
+   {
+    return null;
+   }
+   else
+   {
+    String present = head.getData();
+    head = head.getNext();
+    nodeCount--;
+    return present;
+
+   }
+  }
+
+}
 
