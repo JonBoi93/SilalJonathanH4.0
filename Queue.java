@@ -37,5 +37,5 @@ public class Queue{
    System.out.println("  " + seek.getData());
    seek = seek.getNext();
   }
- }
+ 
 
