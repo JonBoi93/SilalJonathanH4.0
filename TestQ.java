@@ -23,5 +23,11 @@ public static void QueueTester()
 	q.enqueue("Kevin");
 	DequeueAll(q);
 }
-
+public static void DequeueAll(Queue q)
+	{
+		while (q.peek() != null)
+		{
+			System.out.println(q.dequeue());
+		}
+	}
 }
